@@ -32,6 +32,7 @@ include('fVote_setup.php');
 include('fVote_core.php');
 
 register_activation_hook( __FILE__, 'setup_fVote');
+add_action( 'init', 'vote_slider_init');
 
 
 // is commented out... you need this line when you want to delete the fVote table from database.

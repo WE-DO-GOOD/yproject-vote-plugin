@@ -9,34 +9,12 @@ function setup_fVote(){
 
 $sql = "CREATE TABLE $table_name (
   id mediumint(9) NOT NULL AUTO_INCREMENT,
-  vote TEXT DEFAULT '' NOT NULL,
-  question TEXT DEFAULT '' NOT NULL,
-  subjects TEXT DEFAULT '' NOT NULL,
-  remarks TEXT DEFAULT '' NOT NULL,
-  impact_positif TEXT DEFAULT '',
-  local  BOOLEAN,
-  environemental  BOOLEAN,
-  economique BOOLEAN,
-  social BOOLEAN,
-  autre BOOLEAN,
-  
-  impact_negatif BOOLEAN,
-  pret_collect BOOLEAN,
+  impact TEXT DEFAULT '',
+  retravaille TEXT DEFAULT '' ,
+  liste_risque TEXT DEFAULT '',
   investir BOOLEAN,
   sum INT,
   risque BOOLEAN,
-  tres_faible BOOLEAN,
-  plutot_faible BOOLEAN,
-  modere BOOLEAN,
-  plutot_eleve BOOLEAN,
-  tres_eleve BOOLEAN,
-  responsable BOOLEAN,
-  mal_explique BOOLEAN,
-  service BOOLEAN,
-  equipe BOOLEAN,
-  plan BOOLEAN,
-  porteur BOOLEAN,
-  
   isvoted BOOLEAN,
   
   user_id INT NOT NULL,
@@ -65,8 +43,35 @@ require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 dbDelta($sql);
 
 }
+/*
+* Permet d'initialiser les fonctionnalités liés des vote
+*/
 
+function vote_slider_init(){
 
+  $labels =  array(
+      'name'        => __( 'Votes', 'atcf' ),
+      'singular_name'   => __( 'vote', 'atcf' ),
+      'add_new_item'    => __( 'Add New Vote', 'atcf' ),
+      'edit_item'     => __( 'Edit Vote', 'atcf' ),
+      'new_item'      => __( 'New Vote', 'atcf' ),
+      'all_items'     => __( 'All Votes', 'atcf' ),
+      'view_item'     => __( 'View Vote', 'atcf' ),
+      'search_items'    => __( 'Search Votes', 'atcf' ),
+      'not_found'     => __( 'No Votes found', 'atcf' ),
+      'not_found_in_trash'=> __( 'No Votes found in Trash', 'atcf' ),
+      'parent_item_colon' => '',
+      'menu_name'     => __( 'Votes', 'atcf' )
+     );
+
+  register_post_type( 'slide',
+    array(
+    'public' => true,
+    'labels' => $labels,
+    'capability_type' => 'post',
+    'supports' =>('title'),
+  ));
+}
 
 
 
