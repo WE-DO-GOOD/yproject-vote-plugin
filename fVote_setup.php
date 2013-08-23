@@ -10,13 +10,27 @@ function setup_fVote(){
 $sql = "CREATE TABLE $table_name (
   id mediumint(9) NOT NULL AUTO_INCREMENT,
   impact TEXT DEFAULT '',
-  retravaille TEXT DEFAULT '' ,
+  local TEXT DEFAULT '',
+  environmental TEXT DEFAULT '',
+  social TEXT DEFAULT '',
+  autre TEXT DEFAULT '',
+  pret_pour_collect TEXT DEFAULT '',
   liste_risque TEXT DEFAULT '',
-  investir BOOLEAN,
+  retravaille TEXT DEFAULT '',
+  pas_responsable TEXT DEFAULT '',
+  mal_explique TEXT DEFAULT '',
+  qualite_produit TEXT DEFAULT '',
+  qualite_equipe TEXT DEFAULT '',
+  qualite_business_plan TEXT DEFAULT '',
+  qualite_innovation TEXT DEFAULT '',
+  qualite_marche TEXT DEFAULT '',
+  conseil TEXT DEFAULT '',
+  
   sum INT,
-  risque BOOLEAN,
   isvoted BOOLEAN,
   
+  desaprouve TEXT DEFAULT '',
+
   user_id INT NOT NULL,
   campaign_id INT NOT NULL,
 
