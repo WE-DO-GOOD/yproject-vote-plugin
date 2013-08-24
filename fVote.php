@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: fVote
+Plugin Name: YP Vote 
 Plugin URI: http://wordpress.org/extend/plugins/fVote
-Description: fVote is a Poll plugin for specific questions
+Description: ypVote crée la table ypvote pour les votes
 Author: wp-plugin-dev.com
 Version: 0.5
 Author URI: http://www.wp-plugin-dev.com
-Text Domain:   fVote
+Text Domain:   ypVote
 Domain Path:   /lang/
 
 This Plugin is licensed under GPL
@@ -31,13 +31,13 @@ This Plugin is licensed under GPL
 include('fVote_setup.php');
 include('fVote_core.php');
 
-register_activation_hook( __FILE__, 'setup_fVote');
-add_action( 'init', 'vote_slider_init');
+register_activation_hook( __FILE__, 'setup_ypVote');
+
 
 
 // is commented out... you need this line when you want to delete the fVote table from database.
 // rememebr all your data from fVote is lost than.
-// register_deactivation_hook( __FILE__, 'uninstall_fVote');
+// register_deactivation_hook( __FILE__, 'uninstall_ypVote');
 
 
 

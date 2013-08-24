@@ -3,9 +3,9 @@
 
 
 
-function create_fVote($atts) {
+function create_ypVote($atts) {
     global $wpdb;
-    $table_name = $wpdb->prefix . "fVote";
+    $table_name = $wpdb->prefix . "ypVote";
 
  
  ob_start();
@@ -13,7 +13,7 @@ function create_fVote($atts) {
 }
 
 
-add_shortcode('fVote', 'create_fVote');
+add_shortcode('ypVote', 'create_ypVote');
 
 
 ?>
