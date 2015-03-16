@@ -1,0 +1,1 @@
+C'est une  extension du pluging wordpress de vote fVote
